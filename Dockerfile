@@ -1,9 +1,11 @@
 # Use an official Maven image to build the application
 FROM maven:3.8.4-openjdk-17 AS build
-COPY . /app
+COPY pom.xml /app/
+COPY src /app/src
+COPY .mvn /app/.mvn
+COPY mvnw /app/mvnw
 WORKDIR /app
 RUN chmod +x mvnw
-RUN ./mvnw --version
 RUN ./mvnw clean install
 
 # Use an official OpenJDK image to run the application
