@@ -2,3 +2,8 @@ target
 *.jar
 *.war
 *.zip
+.git
+.gitignore
+.dockerignore
+README.md
+target
